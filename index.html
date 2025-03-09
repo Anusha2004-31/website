@@ -1,166 +1,88 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎵 Telugu Music Player 🎵</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            text-align: center;
-            padding: 50px;
-            transition: background 0.3s, color 0.3s;
+        html {
+          scroll-behavior: smooth;
         }
-
-        .player-container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            transition: background 0.3s;
-        }
-
-        h1 {
-            font-size: 24px;
-            color: #333;
-        }
-
-        input[type="file"] {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background: #fff;
-            cursor: pointer;
-        }
-
-        audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            cursor: pointer;
-            padding: 10px;
-            background: #ddd;
-            margin: 5px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        li:hover {
-            background: #bbb;
-        }
-
-        .controls {
-            margin-top: 10px;
-        }
-
-        button {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background: #007bff;
-            color: white;
-            font-size: 16px;
-            margin: 5px;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #0056b3;
-        }
-
-        .dark-mode {
-            background: #222;
-            color: white;
-        }
-
-        .dark-mode .player-container {
-            background: #333;
-        }
-
-        .dark-mode button {
-            background: #ff9800;
-        }
-
-        .dark-mode button:hover {
-            background: #e68900;
-        }
-    </style>
+      </style>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helping Hands Foundation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="player-container">
-        <h1>🎵 my Music Player 🎵</h1>
-        <input type="file" accept="audio/*" multiple onchange="loadPlaylist(event)">
-        <ul id="playlist"></ul>
-        <audio controls id="audioPlayer" autoplay>
-            Your browser does not support the audio element.
-        </audio>
-        
-        <div class="controls">
-            <button onclick="prevSong()">⏮ Prev</button>
-            <button onclick="nextSong()">⏭ Next</button>
-            <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Helping Hands Foundation</h1>
+            <p>Join us to make a better world!</p>
+            <a href="#contact" class="btn">Donate Now</a>
         </div>
-    </div>
+    </section>
 
-    <script>
-        let songList = [];
-        let currentSongIndex = 0;
-        const audioPlayer = document.getElementById('audioPlayer');
-        const playlistElement = document.getElementById('playlist');
-        const body = document.body;
+    <!-- About Us Section -->
+    <section class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>
+                We are a non-profit organization dedicated to helping underprivileged communities with education, food, and health services.
+            </p>
+        </div>
+    </section>
 
-        function loadPlaylist(event) {
-            songList = Array.from(event.target.files);
-            playlistElement.innerHTML = "";
-            songList.forEach((song, index) => {
-                const listItem = document.createElement("li");
-                listItem.textContent = song.name;
-                listItem.onclick = () => playSong(index);
-                playlistElement.appendChild(listItem);
-            });
-            playSong(0);
-        }
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-items">
+                <div class="service-box">
+                    <h3>Education Support</h3>
+                    <p>We provide books, school supplies, and scholarships for children.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Food Distribution</h3>
+                    <p>We organize food drives and meal programs for needy families.</p>
+                </div>
+                <div class="service-box">
+                    <h3>Health Camps</h3>
+                    <p>We conduct free health check-ups and awareness camps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        function playSong(index) {
-            currentSongIndex = index;
-            const file = songList[index];
-            if (file) {
-                audioPlayer.src = URL.createObjectURL(file);
-                audioPlayer.play();
-            }
-        }
-
-        function nextSong() {
-            if (currentSongIndex < songList.length - 1) {
-                playSong(currentSongIndex + 1);
-            }
-        }
-
-        function prevSong() {
-            if (currentSongIndex > 0) {
-                playSong(currentSongIndex - 1);
-            }
-        }
-
-        function toggleDarkMode() {
-            body.classList.toggle("dark-mode");
-        }
-
-        audioPlayer.addEventListener("ended", () => {
-            nextSong();
-        });
-    </script>
-
+    <!-- Contact Us Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form onsubmit="showMessage(); return false;">
+                <input type="text" placeholder="anusha thotapalli" required>
+                <input type="email" placeholder="anushathotapalli19@gmail.com" required>
+                <textarea placeholder="hello ANU" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+    
+            <!-- Thank you message -->
+            <p id="thankyoucontactingus!" style="display:none; color:green; font-size: 18px; margin-top: 15px;">
+                Thank you for contacting us!
+            </p>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <footer>
+            <p>&copy; 2025 Helping Hands Foundation. All Rights Reserved.</p>
+            <div class="social-icons">
+              <a href="#">Facebook</a> |
+              <a href="#">Instagram</a> |
+              <a href="#">Twitter</a>
+            </div>
+          </footer>
+          <p>&copy; 2025 Helping Hands Foundation. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
