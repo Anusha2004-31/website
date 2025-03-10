@@ -5,7 +5,7 @@ A simple to-do list application built using HTML, CSS, and JavaScript.
 ## Installation
 
 1. Clone the repository  
-   git clone https://github.com/anusha/todo-app.git  
+   git clone https://github.com/Anusha2004-31?tab=repositories 
 2. Open index.html in your browser.
 
 ## Usage
