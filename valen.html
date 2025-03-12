@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Valentine's Day!</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffe6f0, #ffd6e0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      position: relative;
+    }
+
+    /* Heading */
+    h1 {
+      color: #d6336c;
+      font-size: 3.5em;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Quote */
+    .quote {
+      color: #333;
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      text-align: center;
+      max-width: 80%;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    /* Names */
+    .names {
+      font-size: 1.8em;
+      color: #ff3366;
+      margin-bottom: 20px;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    /* Image Styling */
+    .valentine-img {
+      width: 200px; /* Adjust size */
+      height: auto;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 5s ease-in-out;
+    }
+
+    /* Floating hearts */
+    .floating-heart {
+      position: absolute;
+      color: #ff3366;
+      font-size: 24px;
+      animation: float 5s infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0% {
+        bottom: 0;
+        opacity: 0;
+        transform: translateX(0);
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateX(50px);
+      }
+    }
+
+    /* Fade in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Happy Valentine's Day!</h1>
+
+  <!-- Quote -->
+  <div class="quote">"You make my world beautiful!"</div>
+
+  <!-- Your Names -->
+  <div class="names">Ammu ❤️ Chinnu</div>
+
+  <!-- Picture -->
+  <img src="pic.jpg" alt="Valentine image" class="valentine-img">
+
+  <!-- Floating Hearts -->
+  <div class="floating-heart" style="left: 10%; animation-delay: 0s;">❤️</div>
+  <div class="floating-heart" style="left: 30%; animation-delay: 2s;">❤️</div>
+  <div class="floating-heart" style="left: 50%; animation-delay: 4s;">❤️</div>
+  <div class="floating-heart" style="left: 70%; animation-delay: 1s;">❤️</div>
+  <div class="floating-heart" style="left: 90%; animation-delay: 3s;">❤️</div>
+
+  <!-- Music (optional) -->
+  <audio id="romanticMusic" src="song.mp3" loop></audio>
+
+  <script>
+    const music = document.getElementById('romanticMusic');
+    let isMusicPlaying = false;
+
+    // Play music on first click
+    document.body.addEventListener('click', () => {
+      if (!isMusicPlaying) {
+        music.play();
+        isMusicPlaying = true;
+      }
+    });
+  </script>
+
+</body>
+</html>
