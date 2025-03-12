@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Om Namah Shivaya</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+
+  <!-- Icon Library (Font Awesome for music icon) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <style>
+    body {
+      background-color: black;
+      color: pink;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-family: 'Tangerine', cursive;
+      color: white;
+      margin-top: 50px;
+      font-size: 80px;
+      letter-spacing: 2px;
+    }
+
+    .shiva-symbol {
+      margin: 50px auto;
+      position: relative;
+      width: 200px;
+    }
+
+    .line {
+      width: 200px;
+      height: 15px;
+      background-color: white;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+
+    .dot {
+      width: 30px;
+      height: 30px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50%;
+      margin-top: -15px;
+      z-index: 1;
+    }
+
+    /* Music Icon */
+    #music-icon {
+      font-size: 40px;
+      color:black;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      transition: transform 0.3s;
+    }
+
+    #music-icon:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Om Namah Shivaya</h1>
+
+  <!-- Shiva Tripundra Symbol -->
+  <div class="shiva-symbol">
+    <div class="line"></div>
+    <div class="dot"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
+  <!-- Music Icon -->
+  <i id="music-icon" class="fas fa-music"></i>
+
+  <!-- Background Music -->
+  <audio id="shivMusic" loop>
+    <source src="sivvv.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const music = document.getElementById("shivMusic");
+    const musicIcon = document.getElementById("music-icon");
+
+    let isPlaying = false;
+
+    musicIcon.addEventListener("click", () => {
+      if (!isPlaying) {
+        music.play();
+        isPlaying = true;
+        musicIcon.classList.add("fa-pause");
+        musicIcon.classList.remove("fa-music");
+      } else {
+        music.pause();
+        isPlaying = false;
+        musicIcon.classList.add("fa-music");
+        musicIcon.classList.remove("fa-pause");
+      }
+    });
+  </script>
+
+</body>
+</html>
