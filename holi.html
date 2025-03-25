@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY HOLI</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffb7, #0051ff, #7a00ff, #ff00ea);
+            background-size: 400% 400%;
+            animation: gradientAnimation 6s infinite alternate;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        h1 {
+            position: absolute;
+            font-size: 80px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: white;
+            z-index: 10;
+            text-shadow: 0 0 20px white;
+            animation: textGlow 1.5s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { color: yellow; text-shadow: 0 0 20px red; }
+            50% { color: cyan; text-shadow: 0 0 20px magenta; }
+            100% { color: lime; text-shadow: 0 0 20px blue; }
+        }
+
+        .splash {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            opacity: 0.8;
+            transform: scale(1);
+            animation: splashEffect 1.5s ease-out forwards;
+        }
+
+        @keyframes splashEffect {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Holi!</h1>
+
+    <!-- Sound Effects -->
+    <audio id="holiSound">
+        <source src="holi.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function createSplash() {
+            const splash = document.createElement("div");
+            splash.className = "splash";
+
+            // Random position
+            splash.style.left = Math.random() * window.innerWidth + "px";
+            splash.style.top = Math.random() * window.innerHeight + "px";
+
+            // Vibrant Holi colors
+            const colors = ["#FF5733", "#FFC300", "#DAF7A6", "#FF33F6", "#33FFF9", "#FF3333", "#8E44AD", "#3498DB"];
+            splash.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+            document.body.appendChild(splash);
+
+            // Remove splash after animation
+            setTimeout(() => splash.remove(), 1500);
+
+            // Play sound effect
+            playSound();
+        }
+
+        function playSound() {
+            const sound = document.getElementById("holiSound");
+            sound.currentTime = 0;  // Restart sound each time
+            sound.play();
+        }
+
+        // Generate splashes & play sound effect
+        setInterval(createSplash, 300);
+    </script>
+</body>
+</html>
