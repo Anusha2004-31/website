@@ -1,131 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login & Sign Up</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #a8edea, #fed6e3);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .container {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      width: 300px;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    .toggle {
-      text-align: center;
-      margin-top: 10px;
-      color: blue;
-      cursor: pointer;
-    }
-
-    #signupForm {
-      display: none;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="card">
+    <div class="profile-img">
+      <img src="profile.jpg" alt="Profile Photo">
+    </div>
+    <h2>CodingLab</h2>
+    <p>YouTuber & Blogger</p>
 
-  <div class="container">
-    <!-- Login Form -->
-    <div id="loginForm">
-      <h2>Login</h2>
-      <input type="text" id="loginUsername" placeholder="Username" />
-      <input type="password" id="loginPassword" placeholder="Password" />
-      <button type="button" onclick="login()">Login</button>
-      <div class="toggle" onclick="toggleForm('signup')">Don't have an account? Sign Up</div>
+    <div class="social-icons">
+      <a href="#"><img src="facebook.jpeg" alt="Facebook"></a>
+      <a href="#"><img src="twiter.png" alt="Twitter"></a>
+      <a href="#"><img src="insta.jpeg" alt="Instagram"></a>
+      <a href="#"><img src="youtube.png" alt="youtube"></a>
     </div>
 
-    <!-- Sign Up Form -->
-    <div id="signupForm">
-      <h2>Sign Up</h2>
-      <input type="text" id="signupUsername" placeholder="Username" />
-      <input type="email" id="signupEmail" placeholder="Email" />
-      <input type="password" id="signupPassword" placeholder="Password" />
-      <button type="button" onclick="signup()">Sign Up</button>
-      <div class="toggle" onclick="toggleForm('login')">Already have an account? Login</div>
+    <div class="buttons">
+      <button>Subscribe</button>
+      <button>Message</button>
     </div>
   </div>
-
-  <script>
-    function toggleForm(form) {
-      if (form === 'signup') {
-        document.getElementById("loginForm").style.display = "none";
-        document.getElementById("signupForm").style.display = "block";
-      } else {
-        document.getElementById("signupForm").style.display = "none";
-        document.getElementById("loginForm").style.display = "block";
-      }
-    }
-
-    function signup() {
-      const username = document.getElementById("signupUsername").value;
-      const password = document.getElementById("signupPassword").value;
-
-      if (!username || !password) {
-        alert("Please fill all fields");
-        return;
-      }
-
-      localStorage.setItem("username", username);
-      localStorage.setItem("password", password);
-
-      alert("Account created! Now login.");
-      toggleForm('login');
-    }
-
-    function login() {
-      const enteredUsername = document.getElementById("loginUsername").value;
-      const enteredPassword = document.getElementById("loginPassword").value;
-
-      const savedUsername = localStorage.getItem("username");
-      const savedPassword = localStorage.getItem("password");
-
-      if (enteredUsername === savedUsername && enteredPassword === savedPassword) {
-        alert("Login successful! Welcome " + enteredUsername);
-      } else {
-        alert("Incorrect username or password");
-      }
-    }
-  </script>
-
 </body>
 </html>
