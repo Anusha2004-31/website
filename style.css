@@ -1,71 +1,63 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.sqr {
+    height:400px;
+    width:400px; 
+    background-color: brown;
+    color:blueviolet;
+    border-left:2px solid black;
+    border-top:2px  double green;
+    border-right:2px dotted yellow;
+    border-bottom:2px dashed brown;
+}
+.sqr:hover{
+    background-color:blueviolet;
+    color:brown;
+}
+.rec {
+    height:300px;
+    width:300px; 
+    background-color:burlywood;
+    color:coral;
+    border-left: 2px solid black;
+    border-top:2px double purple;
+    border-right:2px dotted yellow;
+    border-bottom:2px dashed blue;
+}
+.rec:hover{
+    background-color:coral;
+    color:burlywood;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background:green;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+
+.els {
+    height:200px;
+    width:300px;
+    border-radius:50% ; 
+    background-color:chartreuse;
+    color:bisque;
+     border-left:2px solid black;
+    border-top:2px double green;
+    border-right:2px dotted orange;
+    border-bottom:2px dashed brown;
+}s
+
+.els:hover{
+    background-color:bisque;
+    color:chartreuse;
+}
+.cir{
+    height:150px;
+    width:150px; 
+    border-radius:50%; 
+    background-color:crimson;
+    color:darksalmon;
+    border-left:2px solid black;
+    border-top:2pxd ouble green;
+    border-right:2px dotted brown;
+    border-bottom:2px dashed yellow;
+    
+}
+.cir:hover{
+    background-color:darksalmon;
+    color:crimson;
 }
 
-.card {
-  background:white;
-  width: 280px;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-}
-
-.profile-img {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-  background-color:lavenderblush
-}
-
-.profile-img img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-h2 {
-  font-size: 20px;
-  color: black;
-}
-
-p {
-  font-size: 14px;
-  color:crimson;
-  margin-bottom: 15px;
-}
-
-.social-icons {
-  margin-bottom: 15px;
-}
-
-.social-icons a img {
-  width: 25px;
-  margin: 0 5px;
-}
-.buttons button {
-  background-color:rgb(76, 0, 255);
-  color: white;
-  border: none;
-  padding: 8px;
-  margin: 5px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition:background-color 0.3s; 
-  
-}
-
-.buttons button:hover {
-  background-color:blueviolet;
-}
