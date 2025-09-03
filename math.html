@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <style>
+        h3 {
+            margin-top: 330px;
+            text-align: center;
+        }
+
+        button {
+            margin-left: 640px;
+        }
+    </style>
+    <h3>Guess</h3>
+    <button onclick="btn()">Start</button>
+
+    <script>
+        function btn() {
+            let a = Math.floor(Math.random() * 10);
+            let b = Math.floor(Math.random() * 10);
+            let sum = a + b;
+            alert("Sum of: " + sum);
+            let guess = prompt("sum");
+            if (eval(guess) === sum) {
+                alert("Correct");
+            } else {
+                alert("Wrong");
+            }
+        }
+
+    </script>
+    </center>
+</body>
+
+</html>
